@@ -1,63 +1,26 @@
 # Equipment Management API
 
-FastAPI CRUD API para gestión de equipos industriales.
+FastAPI CRUD API para gestión de equipos industriales con persistencia relacional.
 
 ## Features
-- CRUD completo (Create, Read, Update, Delete)
-- Validación con Pydantic
-- Error handling (404)
+
+* CRUD completo (Create, Read, Update, Delete)
+* Validación de datos con Pydantic
+* Error handling (404)
+* Persistencia de datos y migraciones de esquemas
 
 ## Tech Stack
-- Python 3.10+
-- FastAPI
-- Pydantic
+
+* Python 3.10+
+* FastAPI & Pydantic
+* PostgreSQL
+* SQLAlchemy & Alembic
 
 ## Installation
+
+### 1. Clonar y configurar entorno
 ```bash
-pip install fastapi uvicorn
-```
-
-## Usage
-```bash
-uvicorn main:app --reload
-```
-
-API estará disponible en: http://127.0.0.1:8000
-
-## API Endpoints
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | / | Welcome message |
-| GET | /equipments | List all equipments |
-| POST | /equipments | Create new equipment |
-| GET | /equipments/{id} | Get specific equipment |
-| PUT | /equipments/{id} | Update equipment |
-| DELETE | /equipments/{id} | Delete equipment |
-
-## Example Request
-
-POST /equipments
-```json
-{
-  "name": "Compresor de Aire Principal",
-  "type": "Pneumatic",
-  "location": "Planta Baja - Sector A",
-  "status": "operational"
-}
-```
-
-## Example Response
-```json
-{
-  "equipments": [
-    {
-      "id": 456,
-      "name": "Compresor de Aire Principal",
-      "type": "Pneumatic",
-      "location": "Planta Baja - Sector A",
-      "status": "operational"
-    }
-  ]
-}
-```
+git clone <tu-url-del-repositorio>
+cd equipment-management-api
+python -m venv venv
+source venv/bin/activate  # En Windows: venv\Scripts\activate
